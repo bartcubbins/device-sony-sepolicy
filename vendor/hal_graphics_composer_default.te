@@ -32,3 +32,9 @@ allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_so
 
 # allow hal_graphics_composer_default to read kgsl gpu model
 allow hal_graphics_composer_default vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+
+# Access to mem-buf devices
+allow hal_graphics_composer_default vendor_membuf_dev:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_cp_pixel_device:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_hlos_device:chr_file r_file_perms;
+allow hal_graphics_composer_default vendor_vm_trusted_device:chr_file r_file_perms;

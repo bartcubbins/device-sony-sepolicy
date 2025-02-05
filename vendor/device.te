@@ -49,3 +49,22 @@ type vendor_dmabuf_system_uncached_heap_device, dmabuf_heap_device_type, dev_typ
 type vendor_dmabuf_ubwcp_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_ubwcp_movable_heap_device, dmabuf_heap_device_type, dev_type;
 type vendor_dmabuf_user_contig_heap_device, dmabuf_heap_device_type, dev_type;
+
+# MEM-BUF devices
+type vendor_vm_cp_app_device, dev_type;
+type vendor_vm_cp_bitstream_device, dev_type;
+type vendor_vm_cp_camera_device, dev_type;
+type vendor_vm_cp_camera_preview_device, dev_type;
+type vendor_vm_cp_cdsp_device, dev_type;
+type vendor_vm_cp_non_pixel_device, dev_type;
+type vendor_vm_cp_pixel_device, dev_type;
+type vendor_vm_cp_sec_display_device, dev_type;
+type vendor_vm_cp_spss_hlos_shared_device, dev_type;
+type vendor_vm_cp_spss_sp_device, dev_type;
+type vendor_vm_cp_spss_sp_shared_device, dev_type;
+type vendor_vm_cp_touch_device, dev_type;
+type vendor_vm_hlos_device, dev_type;
+type vendor_vm_oem_device, dev_type;
+type vendor_vm_self_device, dev_type;
+type vendor_vm_trusted_device, dev_type;
+type vendor_membuf_dev, dev_type;

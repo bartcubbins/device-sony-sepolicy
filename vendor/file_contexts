@@ -79,6 +79,25 @@
 /dev/dma_heap/qcom,ubwcp-movable                u:object_r:vendor_dmabuf_ubwcp_movable_heap_device:s0
 /dev/dma_heap/qcom,user-contig                  u:object_r:vendor_dmabuf_user_contig_heap_device:s0
 
+# MEM-BUF devices used for VM memory transactions
+/dev/mem_buf_vm/qcom,cp_app                     u:object_r:vendor_vm_cp_app_device:s0
+/dev/mem_buf_vm/qcom,cp_bitstream               u:object_r:vendor_vm_cp_bitstream_device:s0
+/dev/mem_buf_vm/qcom,cp_camera                  u:object_r:vendor_vm_cp_camera_device:s0
+/dev/mem_buf_vm/qcom,cp_camera_preview          u:object_r:vendor_vm_cp_camera_preview_device:s0
+/dev/mem_buf_vm/qcom,cp_cdsp                    u:object_r:vendor_vm_cp_cdsp_device:s0
+/dev/mem_buf_vm/qcom,cp_non_pixel               u:object_r:vendor_vm_cp_non_pixel_device:s0
+/dev/mem_buf_vm/qcom,cp_pixel                   u:object_r:vendor_vm_cp_pixel_device:s0
+/dev/mem_buf_vm/qcom,cp_sec_display             u:object_r:vendor_vm_cp_sec_display_device:s0
+/dev/mem_buf_vm/qcom,cp_spss_hlos_shared        u:object_r:vendor_vm_cp_spss_hlos_shared_device:s0
+/dev/mem_buf_vm/qcom,cp_spss_sp                 u:object_r:vendor_vm_cp_spss_sp_device:s0
+/dev/mem_buf_vm/qcom,cp_spss_sp_shared          u:object_r:vendor_vm_cp_spss_sp_shared_device:s0
+/dev/mem_buf_vm/qcom,cp_touch                   u:object_r:vendor_vm_cp_touch_device:s0
+/dev/mem_buf_vm/qcom,hlos                       u:object_r:vendor_vm_hlos_device:s0
+/dev/mem_buf_vm/qcom,oemvm                      u:object_r:vendor_vm_oem_device:s0
+/dev/mem_buf_vm/qcom,self                       u:object_r:vendor_vm_self_device:s0
+/dev/mem_buf_vm/qcom,trusted_vm                 u:object_r:vendor_vm_trusted_device:s0
+/dev/membuf                                     u:object_r:vendor_membuf_dev:s0
+
 # files in /odm
 /odm/bin/hw/vendor\.qti\.spu@1\.0-service                         u:object_r:spu_exec:s0
 /odm/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service           u:object_r:tee_exec:s0
