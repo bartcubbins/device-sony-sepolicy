@@ -30,6 +30,9 @@
 /dev/subsys_.*                                  u:object_r:vendor_ssr_device:s0
 /dev/ramdump_.*                                 u:object_r:vendor_ramdump_device:s0
 /dev/sg[0-9]+                                   u:object_r:vendor_sg_device:s0
+/dev/ufs-bsg.*                                  u:object_r:vendor_bsg_device:s0
+/dev/0:0:0:49476                                u:object_r:vendor_bsg_device:s0
+/dev/0:0:0:4                                    u:object_r:vendor_ufs_lun4_bsg_device:s0
 /dev/sensors                                    u:object_r:sensors_device:s0
 /dev/pn5[0-9x]+                                 u:object_r:nfc_device:s0
 /dev/nq-nci                                     u:object_r:nfc_device:s0

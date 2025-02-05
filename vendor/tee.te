@@ -12,6 +12,8 @@ allow tee vendor_rpmb_block_device:blk_file rw_file_perms;
 allowxperm tee vendor_rpmb_block_device:blk_file ioctl MMC_IOC_CMD;
 allow tee vendor_ssd_block_device:blk_file rw_file_perms;
 allow tee vendor_sg_device:chr_file { rw_file_perms setattr };
+allow tee vendor_bsg_device:chr_file rw_file_perms;
+allow tee vendor_ufs_lun4_bsg_device:chr_file rw_file_perms;
 
 rw_dir_file(tee, vendor_tzstorage_data_file)
 

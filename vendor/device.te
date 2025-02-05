@@ -14,6 +14,8 @@ type vendor_ramdump_device, dev_type;
 type vendor_rmnet_device, dev_type;
 type vendor_ramdump_block_device, dev_type;
 type vendor_sg_device, dev_type;
+type vendor_bsg_device, dev_type;
+type vendor_ufs_lun4_bsg_device, dev_type;
 type vendor_smd_device, dev_type;
 type vendor_ssd_block_device, dev_type;
 type vendor_ssr_device, dev_type;
