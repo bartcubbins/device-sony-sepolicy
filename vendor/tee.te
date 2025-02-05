@@ -34,3 +34,7 @@ allow tee vendor_egistec_misc_data_file:file create_file_perms;
 type_transition tee system_data_file:{ dir file } tee_data_file;
 allow tee system_data_file:dir { add_name write };
 allow tee tee_data_file:dir { create setattr };
+
+# Access to dma-buf devices
+allow tee vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow tee vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;

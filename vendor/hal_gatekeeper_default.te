@@ -2,3 +2,6 @@ allow hal_gatekeeper_default vendor_firmware_file:dir search;
 
 get_prop(hal_gatekeeper_default, vendor_tee_listener_prop)
 set_prop(hal_gatekeeper_default, vendor_keymaster_prop)
+
+# Access to dma-buf devices
+allow hal_gatekeeper_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;

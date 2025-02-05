@@ -58,6 +58,27 @@
 /dev/socket/ims_datad                           u:object_r:vendor_ims_socket:s0
 /dev/socket/dpmd                                u:object_r:vendor_dpmd_socket:s0
 
+# DMA-BUF Heaps
+/dev/dma_heap/qcom,adsp                         u:object_r:vendor_dmabuf_adsp_heap_device:s0
+/dev/dma_heap/qcom,audio-ml                     u:object_r:vendor_dmabuf_audio_ml_heap_device:s0
+/dev/dma_heap/qcom,cma-secure-cdsp              u:object_r:vendor_dmabuf_cma_secure_cdsp_heap_device:s0
+/dev/dma_heap/qcom,demura                       u:object_r:vendor_dmabuf_demura_heap_device:s0
+/dev/dma_heap/qcom,display                      u:object_r:vendor_dmabuf_display_heap_device:s0
+/dev/dma_heap/qcom,qseecom                      u:object_r:vendor_dmabuf_qseecom_heap_device:s0
+/dev/dma_heap/qcom,qseecom-ta                   u:object_r:vendor_dmabuf_qseecom_ta_heap_device:s0
+/dev/dma_heap/qcom,secure-cdsp                  u:object_r:vendor_dmabuf_secure_cdsp_heap_device:s0
+/dev/dma_heap/qcom,secure-non-pixel             u:object_r:vendor_dmabuf_secure_non_pixel:s0
+/dev/dma_heap/qcom,secure-pixel                 u:object_r:vendor_dmabuf_secure_pixel:s0
+/dev/dma_heap/qcom,secure-sp-modem              u:object_r:vendor_dmabuf_secure_sp_modem_heap_device:s0
+/dev/dma_heap/qcom,secure-sp-tz                 u:object_r:vendor_dmabuf_secure_sp_tz_heap_device:s0
+/dev/dma_heap/qcom,sp-hlos                      u:object_r:vendor_dmabuf_sp_hlos_heap_device:s0
+/dev/dma_heap/qcom,system                       u:object_r:vendor_dmabuf_system_heap_device:s0
+/dev/dma_heap/qcom,system-movable               u:object_r:vendor_dmabuf_system_movable_heap_device:s0
+/dev/dma_heap/qcom,system-uncached              u:object_r:vendor_dmabuf_system_uncached_heap_device:s0
+/dev/dma_heap/qcom,ubwcp                        u:object_r:vendor_dmabuf_ubwcp_heap_device:s0
+/dev/dma_heap/qcom,ubwcp-movable                u:object_r:vendor_dmabuf_ubwcp_movable_heap_device:s0
+/dev/dma_heap/qcom,user-contig                  u:object_r:vendor_dmabuf_user_contig_heap_device:s0
+
 # files in /odm
 /odm/bin/hw/vendor\.qti\.spu@1\.0-service                         u:object_r:spu_exec:s0
 /odm/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service           u:object_r:tee_exec:s0

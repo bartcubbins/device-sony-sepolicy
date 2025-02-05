@@ -15,6 +15,12 @@ allow hal_audio_default vendor_powerhal_socket:dir { open read search };
 allow hal_audio_default vendor_audio_data_file:dir rw_dir_perms;
 allow hal_audio_default vendor_audio_data_file:file create_file_perms;
 
+# Access to dma-buf devices
+allow hal_audio_default dmabuf_system_heap_device:chr_file r_file_perms;
+allow hal_audio_default vendor_dmabuf_audio_ml_heap_device:chr_file r_file_perms;
+allow hal_audio_default vendor_dmabuf_system_heap_device:chr_file r_file_perms;
+allow hal_audio_default vendor_dmabuf_system_uncached_heap_device:chr_file r_file_perms;
+
 r_dir_file(hal_audio_default, sysfs)
 r_dir_file(hal_audio_default, vendor_sysfs_soc)
 r_dir_file(hal_audio_default, sysfs_thermal)
