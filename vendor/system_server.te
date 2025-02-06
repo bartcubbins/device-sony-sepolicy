@@ -14,8 +14,6 @@ allow system_server hal_audio_default:file w_file_perms;
 
 allow system_server netmgrd_socket:dir r_dir_perms;
 qrtr_socket_create(system_server)
-# TODO (b/deprecate-old-ipc-router): Remove 4.9 ipc-router compatibility `socket' when kernel 4.14 is final
-allowxperm system_server self:socket ioctl msm_sock_ipc_ioctls;
 
 # radio
 rw_dir_file(system_server, qmuxd_socket)

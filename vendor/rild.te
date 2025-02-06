@@ -30,8 +30,5 @@ unix_socket_connect(rild, netmgrd, netmgrd)
 allow rild socket_device:sock_file setattr;
 
 qrtr_socket_create(rild)
-# TODO (b/deprecate-old-ipc-router): Remove 4.9 ipc-router compatibility `socket' when kernel 4.14 is final
-allow rild self:socket ioctl;
-allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
 
 hal_server_domain(rild, hal_secure_element)

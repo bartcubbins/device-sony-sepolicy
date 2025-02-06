@@ -34,8 +34,6 @@ allow netmgrd self:netlink_route_socket nlmsg_write;
 allow netmgrd self:netlink_socket create_socket_perms_no_ioctl;
 
 qrtr_socket_create(netmgrd)
-# TODO (b/deprecate-old-ipc-router): Remove 4.9 ipc-router compatibility `socket' when kernel 4.14 is final
-allowxperm netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 
 allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
 
