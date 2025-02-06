@@ -18,7 +18,6 @@
   when kernel 4.14 is final. ioctl defines and macros can be removed as well.
 - b/aosp-keylayout: Remove once https://r.android.com/1140902 has landed in
   Android R
-- b/36764215: Remove `firmware_file` compat once 64bit A/B GSIs stop shipping it
 - b/systemext-policy: Use new make variable names:
   https://r.android.com/q/topic:board-system-ext-sepolicy
 - b/permissioncontroller: Remove permissioncontroller policy once fixed upstream
