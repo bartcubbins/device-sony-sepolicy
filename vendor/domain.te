@@ -2,6 +2,6 @@
 # to be created for memory tracking, the domain of
 # the tracked process must have permission to search
 # in /sys/kernel/debug/kgsl
-allow domain debugfs_kgsl:dir search;
+allow domain vendor_debugfs_kgsl:dir search;
 
-allow domain debugfs_ion:dir search;
+allow domain vendor_debugfs_ion:dir search;

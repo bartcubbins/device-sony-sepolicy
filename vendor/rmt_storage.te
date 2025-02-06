@@ -15,20 +15,20 @@ allow rmt_storage self:capability {
 
 allow rmt_storage kernel:system module_request;
 
-allow rmt_storage modem_block_device:blk_file rw_file_perms;
+allow rmt_storage vendor_modem_block_device:blk_file rw_file_perms;
 allow rmt_storage uio_device:chr_file rw_file_perms;
 allow rmt_storage block_device:dir { open read search };
 
-r_dir_file(rmt_storage, sysfs_msm_subsys)
-r_dir_file(rmt_storage, sysfs_esoc)
+r_dir_file(rmt_storage, vendor_sysfs_msm_subsys)
+r_dir_file(rmt_storage, vendor_sysfs_esoc)
 
 allow rmt_storage sysfs_uio:dir r_dir_perms;
 allow rmt_storage sysfs_uio:lnk_file r_file_perms;
 
-allow rmt_storage sysfs_rmtfs:dir search;
-allow rmt_storage sysfs_rmtfs:file r_file_perms;
+allow rmt_storage vendor_sysfs_rmtfs:dir search;
+allow rmt_storage vendor_sysfs_rmtfs:file r_file_perms;
 
-allow rmt_storage debugfs_rmt_storage:dir search;
+allow rmt_storage vendor_debugfs_rmt_storage:dir search;
 
 qrtr_socket_create(rmt_storage)
 

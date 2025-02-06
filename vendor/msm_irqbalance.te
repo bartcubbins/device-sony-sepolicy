@@ -11,6 +11,6 @@ allow msm_irqbalance sysfs_devices_system_cpu:file rw_file_perms;
 # Allow msm_irqbalance to search irq and set SMP affinity:
 r_dir_rw_file(msm_irqbalance, proc_irq)
 
-allow msm_irqbalance sysfs_irq:file r_file_perms;
+allow msm_irqbalance vendor_sysfs_irq:file r_file_perms;
 allow msm_irqbalance proc_stat:file r_file_perms;
 allow msm_irqbalance proc_interrupts:file r_file_perms;

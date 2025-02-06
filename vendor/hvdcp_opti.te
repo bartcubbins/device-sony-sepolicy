@@ -13,15 +13,15 @@ set_prop(hvdcp_opti, vendor_hvdcp_opti_prop)
 allow hvdcp_opti self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 # Allow readwrite to /dev/qg{,_battery}
-allow hvdcp_opti hvdcp_opti_device:chr_file rw_file_perms;
+allow hvdcp_opti vendor_hvdcp_opti_device:chr_file rw_file_perms;
 
 # Allow writing logs to kmsg
 allow hvdcp_opti kmsg_device:chr_file { w_file_perms getattr };
 
 # Access persist files
 allow hvdcp_opti mnt_vendor_file:dir search;
-allow hvdcp_opti persist_file:dir search;
-allow hvdcp_opti persist_hvdcp_file:dir search;
+allow hvdcp_opti vendor_persist_file:dir search;
+allow hvdcp_opti vendor_persist_hvdcp_file:dir search;
 
 r_dir_file(hvdcp_opti, sysfs_batteryinfo)
-allow hvdcp_opti sysfs_msm_subsys:dir search;
+allow hvdcp_opti vendor_sysfs_msm_subsys:dir search;

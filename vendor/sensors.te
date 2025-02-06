@@ -8,29 +8,29 @@ allow sensors self:capability {
     net_bind_service
 };
 
-rw_diag_device(sensors)
+rw_vendor_diag_device(sensors)
 
 qrtr_socket_create(sensors)
 
-allow sensors persist_sensors_file:dir rw_dir_perms;
-allow sensors persist_sensors_file:file create_file_perms;
-allow sensors persist_sensors_file:fifo_file r_file_perms;
-allow sensors persist_file:dir { getattr search };
+allow sensors vendor_persist_sensors_file:dir rw_dir_perms;
+allow sensors vendor_persist_sensors_file:file create_file_perms;
+allow sensors vendor_persist_sensors_file:fifo_file r_file_perms;
+allow sensors vendor_persist_file:dir { getattr search };
 
 # Search /data
 allow sensors system_data_file:dir getattr;
 # Read/write /data/vendor/sensors/*
-allow sensors sensors_vendor_data_file:dir create_dir_perms;
-allow sensors sensors_vendor_data_file:file create_file_perms;
-allow sensors sensors_vendor_data_file:fifo_file { create open read };
+allow sensors vendor_sensors_data_file:dir create_dir_perms;
+allow sensors vendor_sensors_data_file:file create_file_perms;
+allow sensors vendor_sensors_data_file:fifo_file { create open read };
 
 # Access config files
 allow sensors mnt_vendor_file:dir { getattr search };
 
 allow sensors sensors_device:chr_file r_file_perms;
 
-r_dir_file(sensors, sysfs_msm_subsys)
-r_dir_file(sensors, sysfs_soc)
-r_dir_file(sensors, sysfs_esoc)
+r_dir_file(sensors, vendor_sysfs_msm_subsys)
+r_dir_file(sensors, vendor_sysfs_soc)
+r_dir_file(sensors, vendor_sysfs_esoc)
 
 dontaudit sensors kernel:system { module_request };

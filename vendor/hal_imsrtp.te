@@ -8,9 +8,9 @@ net_domain(hal_imsrtp)
 
 hwbinder_use(hal_imsrtp)
 get_prop(hal_imsrtp, hwservicemanager_prop)
-add_hwservice(hal_imsrtp, hal_imsrtp_hwservice)
+add_hwservice(hal_imsrtp, vendor_hal_imsrtp_hwservice)
 
-unix_socket_connect(hal_imsrtp, ims, ims)
+unix_socket_connect(hal_imsrtp, vendor_ims, ims)
 
 qrtr_socket_create(hal_imsrtp)
 
@@ -18,11 +18,11 @@ allow hal_imsrtp self:capability net_bind_service;
 
 allow hal_imsrtp diag:unix_stream_socket connectto;
 
-r_dir_file(hal_imsrtp, sysfs_msm_subsys)
-r_dir_file(hal_imsrtp, sysfs_soc)
-r_dir_file(hal_imsrtp, sysfs_esoc)
+r_dir_file(hal_imsrtp, vendor_sysfs_msm_subsys)
+r_dir_file(hal_imsrtp, vendor_sysfs_soc)
+r_dir_file(hal_imsrtp, vendor_sysfs_esoc)
 
-rw_diag_device(hal_imsrtp)
+rw_vendor_diag_device(hal_imsrtp)
 
 get_prop(hal_imsrtp, vendor_qcom_ims_prop)
 

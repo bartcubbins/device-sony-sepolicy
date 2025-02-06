@@ -1,40 +1,40 @@
-type hal_gnss_qti, domain;
-hal_server_domain(hal_gnss_qti, hal_gnss)
+type vendor_hal_gnss_qti, domain;
+hal_server_domain(vendor_hal_gnss_qti, hal_gnss)
 
-type hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_gnss_qti)
+type vendor_hal_gnss_qti_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_hal_gnss_qti)
 
-r_dir_file(hal_gnss_qti, sysfs_msm_subsys)
-r_dir_file(hal_gnss_qti, sysfs_esoc)
+r_dir_file(vendor_hal_gnss_qti, vendor_sysfs_msm_subsys)
+r_dir_file(vendor_hal_gnss_qti, vendor_sysfs_esoc)
 
-vndbinder_use(hal_gnss_qti)
+vndbinder_use(vendor_hal_gnss_qti)
 
-hal_client_domain(hal_gnss_qti, hal_health)
+hal_client_domain(vendor_hal_gnss_qti, hal_health)
 
-allow hal_gnss_qti sysfs_soc:dir r_dir_perms;
-allow hal_gnss_qti sysfs_soc:file r_file_perms;
-allow hal_gnss_qti qmuxd_socket:dir w_dir_perms;
-allow hal_gnss_qti qmuxd_socket:sock_file create_file_perms;
-unix_socket_connect(hal_gnss_qti, qmuxd, qmuxd)
+allow vendor_hal_gnss_qti vendor_sysfs_soc:dir r_dir_perms;
+allow vendor_hal_gnss_qti vendor_sysfs_soc:file r_file_perms;
+allow vendor_hal_gnss_qti vendor_qmuxd_socket:dir w_dir_perms;
+allow vendor_hal_gnss_qti vendor_qmuxd_socket:sock_file create_file_perms;
+unix_socket_connect(vendor_hal_gnss_qti, vendor_qmuxd, qmuxd)
 
-rw_diag_device(hal_gnss_qti)
+rw_vendor_diag_device(vendor_hal_gnss_qti)
 
-binder_call(hal_gnss_qti, per_mgr)
+binder_call(vendor_hal_gnss_qti, per_mgr)
 
-get_prop(hal_gnss_qti, vendor_net_prop)
+get_prop(vendor_hal_gnss_qti, vendor_net_prop)
 
 # /data/vendor/location
-allow hal_gnss_qti location_vendor_data_file:fifo_file { open read setattr write };
-allow hal_gnss_qti location_vendor_data_file:dir create_dir_perms;
-allow hal_gnss_qti location_vendor_data_file:sock_file write;
+allow vendor_hal_gnss_qti vendor_location_data_file:fifo_file { open read setattr write };
+allow vendor_hal_gnss_qti vendor_location_data_file:dir create_dir_perms;
+allow vendor_hal_gnss_qti vendor_location_data_file:sock_file write;
 
-qrtr_socket_create(hal_gnss_qti)
+qrtr_socket_create(vendor_hal_gnss_qti)
 
-unix_socket_connect(hal_gnss_qti, netmgrd, netmgrd)
-allow hal_gnss_qti netmgrd_socket:dir search;
+unix_socket_connect(vendor_hal_gnss_qti, vendor_netmgrd, netmgrd)
+allow vendor_hal_gnss_qti vendor_netmgrd_socket:dir search;
 
-allow hal_gnss_qti self:netlink_generic_socket { bind create read };
-allow hal_gnss_qti self:netlink_route_socket { bind create nlmsg_read read write };
+allow vendor_hal_gnss_qti self:netlink_generic_socket { bind create read };
+allow vendor_hal_gnss_qti self:netlink_route_socket { bind create nlmsg_read read write };
 
 # Most HALs are not allowed to use network sockets. Qcom library
 # libqdi is used across multiple processes which are clients of
@@ -47,6 +47,6 @@ allow hal_gnss_qti self:netlink_route_socket { bind create nlmsg_read read write
 # TODO (b/37730994) Remove udp_socket requirement from
 # libqdi and have all its clients use netlink route
 # sockets.
-dontaudit hal_gnss_qti self:udp_socket create;
+dontaudit vendor_hal_gnss_qti self:udp_socket create;
 
-allow hal_gnss_qti kernel:system module_request;
+allow vendor_hal_gnss_qti kernel:system module_request;

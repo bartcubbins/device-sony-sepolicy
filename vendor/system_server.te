@@ -1,7 +1,7 @@
 binder_call(system_server, hal_camera_default)
 binder_call(system_server, hal_tetheroffload_default)
 
-allow system_server wlan_device:chr_file rw_file_perms;
+allow system_server vendor_wlan_device:chr_file rw_file_perms;
 
 # Input files in /vendor/usr/
 r_dir_file(system_server, vendor_idc_file)
@@ -12,17 +12,17 @@ allow system_server appdomain:file w_file_perms;
 allow system_server audioserver:file w_file_perms;
 allow system_server hal_audio_default:file w_file_perms;
 
-allow system_server netmgrd_socket:dir r_dir_perms;
+allow system_server vendor_netmgrd_socket:dir r_dir_perms;
 qrtr_socket_create(system_server)
 
 # radio
-rw_dir_file(system_server, qmuxd_socket)
+rw_dir_file(system_server, vendor_qmuxd_socket)
 
 # rtc: hctosys gets acessed by AlarmManagerService via system_server
 allow system_server sysfs_rtc:dir r_dir_perms;
 allow system_server sysfs_rtc:{ file lnk_file } r_file_perms;
 
 # allow system_server to read kgsl gpu model
-allow system_server sysfs_kgsl_gpu_model:file r_file_perms;
+allow system_server vendor_sysfs_kgsl_gpu_model:file r_file_perms;
 
 dontaudit system_server vfat:dir r_dir_perms;

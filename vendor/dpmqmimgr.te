@@ -8,10 +8,10 @@ hwbinder_use(dpmqmimgr)
 binder_call(dpmqmimgr, dpmd)
 
 get_prop(dpmqmimgr, hwservicemanager_prop)
-add_hwservice(dpmqmimgr, vnd_qti_dpm_hwservice)
+add_hwservice(dpmqmimgr, vendor_qti_dpm_hwservice)
 
 allow dpmqmimgr self:qipcrtr_socket create_socket_perms_no_ioctl;
 
-r_dir_file(dpmqmimgr, sysfs_esoc)
-r_dir_file(dpmqmimgr, sysfs_msm_subsys)
-r_dir_file(dpmqmimgr, sysfs_soc)
+r_dir_file(dpmqmimgr, vendor_sysfs_esoc)
+r_dir_file(dpmqmimgr, vendor_sysfs_msm_subsys)
+r_dir_file(dpmqmimgr, vendor_sysfs_soc)

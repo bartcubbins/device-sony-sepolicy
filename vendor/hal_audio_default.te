@@ -1,5 +1,5 @@
 hal_client_domain(hal_audio_default, hal_power)
-allow hal_audio_default vnd_somc_miscta_hwservice:hwservice_manager find;
+allow hal_audio_default vendor_somc_miscta_hwservice:hwservice_manager find;
 binder_call(hal_audio_default, hal_miscta_default)
 
 not_compatible_property(`
@@ -9,12 +9,12 @@ not_compatible_property(`
 # RQBalance-Powerhal
 allow hal_audio_default hal_power_default:unix_stream_socket connectto;
 # RQBalance-Powerhal legacy mode
-allow hal_audio_default powerhal_socket:sock_file write;
-allow hal_audio_default powerhal_socket:dir { open read search };
+allow hal_audio_default vendor_powerhal_socket:sock_file write;
+allow hal_audio_default vendor_powerhal_socket:dir { open read search };
 
-allow hal_audio_default audio_vendor_data_file:dir rw_dir_perms;
-allow hal_audio_default audio_vendor_data_file:file create_file_perms;
+allow hal_audio_default vendor_audio_data_file:dir rw_dir_perms;
+allow hal_audio_default vendor_audio_data_file:file create_file_perms;
 
 r_dir_file(hal_audio_default, sysfs)
-r_dir_file(hal_audio_default, sysfs_soc)
+r_dir_file(hal_audio_default, vendor_sysfs_soc)
 r_dir_file(hal_audio_default, sysfs_thermal)

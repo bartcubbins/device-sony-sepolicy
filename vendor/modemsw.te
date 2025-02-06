@@ -6,10 +6,10 @@ init_daemon_domain(modemsw)
 hwbinder_use(modemsw)
 
 # Access miscta
-allow modemsw vnd_somc_miscta_hwservice:hwservice_manager find;
+allow modemsw vendor_somc_miscta_hwservice:hwservice_manager find;
 binder_call(modemsw, hal_miscta_default)
 # Access modemsw service
-allow modemsw vnd_somc_modemswitcher_hwservice:hwservice_manager find;
+allow modemsw vendor_somc_modemswitcher_hwservice:hwservice_manager find;
 binder_call(modemsw, hal_modemsw_default)
 # Access allocator
 hal_client_domain(modemsw, hal_allocator)

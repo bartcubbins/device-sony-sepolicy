@@ -1,7 +1,7 @@
-# pd_mapper is used by msm8998 and sdm845 to control the modem
+# pd_mapper is used by msm8998+ to control the modem
 type pd_mapper, domain;
-
 type pd_mapper_exec, exec_type, vendor_file_type, file_type;
+
 init_daemon_domain(pd_mapper);
 
 allow pd_mapper kernel:system module_request;
@@ -12,6 +12,6 @@ allow pd_mapper { vendor_firmware_file vendor_file }:dir r_dir_perms;
 
 qrtr_socket_create(pd_mapper)
 
-r_dir_file(pd_mapper, sysfs_msm_subsys)
+r_dir_file(pd_mapper, vendor_sysfs_msm_subsys)
 r_dir_file(pd_mapper, vendor_firmware_file)
-r_dir_file(pd_mapper, sysfs_esoc)
+r_dir_file(pd_mapper, vendor_sysfs_esoc)

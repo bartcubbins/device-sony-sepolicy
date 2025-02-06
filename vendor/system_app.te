@@ -2,9 +2,9 @@
 r_dir_file(system_app, selinuxfs)
 
 # ExtendedSettings props
-r_dir_rw_file(system_app, sysfs_glove_mode)
-r_dir_rw_file(system_app, sysfs_graphics)
-r_dir_rw_file(system_app, sysfs_pcc_profile)
+r_dir_rw_file(system_app, vendor_sysfs_glove_mode)
+r_dir_rw_file(system_app, vendor_sysfs_graphics)
+r_dir_rw_file(system_app, vendor_sysfs_pcc_profile)
 
 # For android setttings
 binder_call(system_app, per_mgr)
@@ -19,4 +19,4 @@ allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
 
 # allow system_app to read kgsl gpu model
-allow system_app sysfs_kgsl_gpu_model:file r_file_perms;
+allow system_app vendor_sysfs_kgsl_gpu_model:file r_file_perms;

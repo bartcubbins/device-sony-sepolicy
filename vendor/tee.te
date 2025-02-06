@@ -8,16 +8,16 @@ set_prop(tee, vendor_keymaster_prop)
 allow tee vendor_firmware_file:dir search;
 allow tee vendor_firmware_file:file r_file_perms;
 allow tee block_device:dir { getattr search };
-allow tee rpmb_block_device:blk_file rw_file_perms;
-allowxperm tee rpmb_block_device:blk_file ioctl MMC_IOC_CMD;
-allow tee ssd_block_device:blk_file rw_file_perms;
-allow tee sg_device:chr_file { rw_file_perms setattr };
+allow tee vendor_rpmb_block_device:blk_file rw_file_perms;
+allowxperm tee vendor_rpmb_block_device:blk_file ioctl MMC_IOC_CMD;
+allow tee vendor_ssd_block_device:blk_file rw_file_perms;
+allow tee vendor_sg_device:chr_file { rw_file_perms setattr };
 
-rw_dir_file(tee, tzstorage_vendor_data_file)
+rw_dir_file(tee, vendor_tzstorage_data_file)
 
-allow tee persist_file:dir r_dir_perms;
-allow tee persist_data_file:dir create_dir_perms;
-allow tee persist_data_file:file create_file_perms;
+allow tee vendor_persist_file:dir r_dir_perms;
+allow tee vendor_persist_data_file:dir create_dir_perms;
+allow tee vendor_persist_data_file:file create_file_perms;
 
 # TODO(b/36644492): Remove data_between_core_and_vendor_violators once
 # tee no longer directly accesses /data owned by the frameworks.
@@ -25,9 +25,10 @@ typeattribute tee data_between_core_and_vendor_violators;
 allow tee system_data_file:dir r_dir_perms;
 allow tee fingerprintd_data_file:dir rw_dir_perms;
 allow tee fingerprintd_data_file:file create_file_perms;
+
 # Access /data/misc/egistec (Also a core<->vendor data violator):
-allow tee egistec_misc_data_file:dir rw_dir_perms;
-allow tee egistec_misc_data_file:file create_file_perms;
+allow tee vendor_egistec_misc_data_file:dir rw_dir_perms;
+allow tee vendor_egistec_misc_data_file:file create_file_perms;
 
 # Create folders in /data/* and automatically label them
 type_transition tee system_data_file:{ dir file } tee_data_file;

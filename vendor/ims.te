@@ -4,39 +4,39 @@ type ims_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(ims)
 net_domain(ims)
 
-add_hwservice(ims, vnd_qti_ims_callinfo_hwservice)
-add_hwservice(ims, vnd_qti_ims_factory_hwservice)
-add_hwservice(ims, vnd_qti_imscms_hwservice)
-add_hwservice(ims, vnd_qti_uce_hwservice)
+add_hwservice(ims, vendor_qti_ims_callinfo_hwservice)
+add_hwservice(ims, vendor_qti_ims_factory_hwservice)
+add_hwservice(ims, vendor_qti_imscms_hwservice)
+add_hwservice(ims, vendor_qti_uce_hwservice)
 
 get_prop(ims, hwservicemanager_prop)
 get_prop(ims, vendor_net_prop)
 set_prop(ims, vendor_qcom_ims_prop)
 
-unix_socket_connect(ims, netmgrd, netmgrd)
-unix_socket_connect(ims, qmuxd, qmuxd)
+unix_socket_connect(ims, vendor_netmgrd, netmgrd)
+unix_socket_connect(ims, vendor_qmuxd, qmuxd)
 unix_socket_connect(ims, property, init)
 
 allow ims self:capability net_bind_service;
 
 qrtr_socket_create(ims)
-allow ims ims_socket:sock_file write;
+allow ims vendor_ims_socket:sock_file write;
 allow ims self:netlink_generic_socket create_socket_perms_no_ioctl;
-allow ims netmgrd_socket:dir search;
-allow ims netmgrd_socket:sock_file w_file_perms;
+allow ims vendor_netmgrd_socket:dir search;
+allow ims vendor_netmgrd_socket:sock_file w_file_perms;
 
-allow ims qmuxd_socket:dir create_dir_perms;
-allow ims qmuxd_socket:sock_file create_file_perms;
+allow ims vendor_qmuxd_socket:dir create_dir_perms;
+allow ims vendor_qmuxd_socket:sock_file create_file_perms;
 
-r_dir_file(ims, sysfs_msm_subsys)
-r_dir_file(ims, sysfs_soc)
-r_dir_file(ims, sysfs_esoc)
+r_dir_file(ims, vendor_sysfs_msm_subsys)
+r_dir_file(ims, vendor_sysfs_soc)
+r_dir_file(ims, vendor_sysfs_esoc)
 
 allow ims diag:unix_stream_socket connectto;
 allow ims self:tipc_socket { bind create };
 allow ims sysfs:file { open read };
 
-rw_diag_device(ims)
+rw_vendor_diag_device(ims)
 
 hwbinder_use(ims)
 

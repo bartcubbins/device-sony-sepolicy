@@ -13,5 +13,5 @@ get_prop(hal_tetheroffload_default, hwservicemanager_prop)
 allow hal_tetheroffload_default system_server:netlink_netfilter_socket { getattr read setopt write };
 
 # Allow creating and modifying the PID file
-allow hal_tetheroffload_default ipa_vendor_data_file:dir create_dir_perms;
-allow hal_tetheroffload_default ipa_vendor_data_file:file create_file_perms;
+allow hal_tetheroffload_default vendor_ipa_data_file:dir create_dir_perms;
+allow hal_tetheroffload_default vendor_ipa_data_file:file create_file_perms;

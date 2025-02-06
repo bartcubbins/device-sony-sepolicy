@@ -13,8 +13,8 @@ allow cnd self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 get_prop(cnd, hwservicemanager_prop)
 
-r_dir_file(cnd, sysfs_msm_subsys)
-r_dir_file(cnd, sysfs_soc)
+r_dir_file(cnd, vendor_sysfs_msm_subsys)
+r_dir_file(cnd, vendor_sysfs_soc)
 r_dir_file(cnd, proc_meminfo)
 
-rw_diag_device(cnd)
+rw_vendor_diag_device(cnd)

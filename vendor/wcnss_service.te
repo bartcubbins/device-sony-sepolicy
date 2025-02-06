@@ -9,7 +9,7 @@ vndbinder_use(wcnss_service)
 
 binder_call(wcnss_service, per_mgr)
 
-allow wcnss_service per_mgr_service:service_manager find;
+allow wcnss_service vendor_per_mgr_service:service_manager find;
 
 allow wcnss_service self:capability {
     net_admin
@@ -17,6 +17,7 @@ allow wcnss_service self:capability {
 };
 
 qrtr_socket_create(wcnss_service)
+
 allow wcnss_service self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow wcnss_service self:netlink_socket create_socket_perms_no_ioctl;
 
@@ -25,15 +26,15 @@ allow wcnss_service proc_net:file rw_file_perms;
 allow wcnss_service vendor_firmware_file:file { read open getattr };
 allow wcnss_service vendor_firmware_file:dir search;
 
-allow wcnss_service wifi_vendor_data_file:dir { add_name write };
-allow wcnss_service wifi_vendor_data_file:file { create write };
+allow wcnss_service vendor_wifi_data_file:dir { add_name write };
+allow wcnss_service vendor_wifi_data_file:file { create write };
 
-r_dir_file(wcnss_service, sysfs_msm_subsys)
-rw_dir_file(wcnss_service, wifi_vendor_data_file)
-r_dir_file(wcnss_service, sysfs_esoc)
+r_dir_file(wcnss_service, vendor_sysfs_msm_subsys)
+rw_dir_file(wcnss_service, vendor_wifi_data_file)
+r_dir_file(wcnss_service, vendor_sysfs_esoc)
 
-allow wcnss_service sysfs_soc:dir search;
-allow wcnss_service sysfs_soc:file r_file_perms;
-allow wcnss_service wifi_vendor_data_file:sock_file { create unlink };
+allow wcnss_service vendor_sysfs_soc:dir search;
+allow wcnss_service vendor_sysfs_soc:file r_file_perms;
+allow wcnss_service vendor_wifi_data_file:sock_file { create unlink };
 
 dontaudit wcnss_service kernel:system module_request;

@@ -5,30 +5,30 @@ hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator)
 vndbinder_use(hal_graphics_composer_default)
 
 # HWC hosts the qdisplay and display config services:
-add_service(hal_graphics_composer_default, qdisplay_service)
-hal_attribute_hwservice(hal_graphics_composer, hal_display_config_hwservice)
+add_service(hal_graphics_composer_default, vendor_qdisplay_service)
+hal_attribute_hwservice(hal_graphics_composer, vendor_hal_display_config_hwservice)
 
 allow hal_graphics_composer_default { graphics_device video_device }:chr_file rw_file_perms;
-rw_diag_device(hal_graphics_composer_default)
+rw_vendor_diag_device(hal_graphics_composer_default)
 
 allow hal_graphics_composer_default oemfs:dir search;
-allow hal_graphics_composer_default persist_display_file:dir getattr;
-allow hal_graphics_composer_default persist_file:dir search;
+allow hal_graphics_composer_default vendor_persist_display_file:dir getattr;
+allow hal_graphics_composer_default vendor_persist_file:dir search;
 
 r_dir_rw_file(hal_graphics_composer_default, sysfs_leds)
-r_dir_file(hal_graphics_composer_default, sysfs_camera)
-r_dir_file(hal_graphics_composer_default, sysfs_msm_subsys)
-allow hal_graphics_composer_default sysfs_mdss_mdp_caps:file r_file_perms;
+r_dir_file(hal_graphics_composer_default, vendor_sysfs_camera)
+r_dir_file(hal_graphics_composer_default, vendor_sysfs_msm_subsys)
+allow hal_graphics_composer_default vendor_sysfs_mdss_mdp_caps:file r_file_perms;
 # Access /sys/devices/virtual/graphics/fb0
-r_dir_rw_file(hal_graphics_composer_default, sysfs_graphics)
+r_dir_rw_file(hal_graphics_composer_default, vendor_sysfs_graphics)
 # Access /mnt/vendor/persist/display
 allow hal_graphics_composer_default mnt_vendor_file:dir search;
-r_dir_file(hal_graphics_composer_default, persist_display_file)
+r_dir_file(hal_graphics_composer_default, vendor_persist_display_file)
 # Access /data/vendor/display/
-create_dir_file(hal_graphics_composer_default, display_vendor_data_file)
+create_dir_file(hal_graphics_composer_default, vendor_display_data_file)
 
 # HWC_UeventThread
 allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 
 # allow hal_graphics_composer_default to read kgsl gpu model
-allow hal_graphics_composer_default sysfs_kgsl_gpu_model:file r_file_perms;
+allow hal_graphics_composer_default vendor_sysfs_kgsl_gpu_model:file r_file_perms;

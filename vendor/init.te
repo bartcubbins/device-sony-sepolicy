@@ -6,7 +6,7 @@ allow init { mnt_vendor_file vendor_firmware_file adsprpcd_file }:dir mounton;
 allow init vendor_firmware_file:filesystem { mount relabelfrom };
 
 # Allow init to relabel symlinks to boot and vbmeta block devices
-allow init { boot_block_device vbmeta_block_device }:lnk_file relabelto;
+allow init { boot_block_device vendor_vbmeta_block_device }:lnk_file relabelto;
 
 dontaudit init kernel:system module_request;
 
@@ -24,9 +24,9 @@ allow init oemfs:dir mounton;
 # /dev/cpuset/*
 allow init device:file rw_file_perms;
 
-allow init sysfs_msm_subsys:file { open setattr write };
+allow init vendor_sysfs_msm_subsys:file { open setattr write };
 # enable_ramdumps:
-allow init sysfs_msm_subsys_restart:file rw_file_perms;
+allow init vendor_sysfs_msm_subsys_restart:file rw_file_perms;
 
 allow init nativetest_data_file:dir { getattr open read };
 allow init nativetest_data_file:file getattr;

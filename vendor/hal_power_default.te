@@ -1,5 +1,5 @@
-allow hal_power_default powerhal_socket:dir rw_dir_perms;
-allow hal_power_default powerhal_socket:sock_file create_file_perms;
+allow hal_power_default vendor_powerhal_socket:dir rw_dir_perms;
+allow hal_power_default vendor_powerhal_socket:sock_file create_file_perms;
 
 allow hal_power_default sysfs_devices_system_cpu:file w_file_perms;
 
@@ -7,6 +7,6 @@ allow hal_power_default sysfs_devices_system_cpu:file w_file_perms;
 get_prop(hal_power_default, vendor_powerhal_prop)
 
 # Read sysfs stats files:
-allow hal_power_default sysfs_system_sleep_stats:file r_file_perms;
-allow hal_power_default sysfs_rpm:file r_file_perms;
-allow hal_power_default sysfs_wlan_power_stats:file r_file_perms;
+allow hal_power_default vendor_sysfs_system_sleep_stats:file r_file_perms;
+allow hal_power_default vendor_sysfs_rpm:file r_file_perms;
+allow hal_power_default vendor_sysfs_wlan_power_stats:file r_file_perms;

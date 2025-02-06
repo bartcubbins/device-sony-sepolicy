@@ -7,7 +7,7 @@ allow ta_qmi kernel:system module_request;
 
 qrtr_socket_create(ta_qmi)
 
-unix_socket_connect(ta_qmi, tad, tad)
+unix_socket_connect(ta_qmi, vendor_tad, tad)
 
 wakelock_use(ta_qmi)
 

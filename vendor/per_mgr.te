@@ -11,20 +11,20 @@ binder_call(per_mgr, per_proxy)
 binder_call(per_mgr, rild)
 binder_call(per_mgr, wcnss_service)
 
-add_service(per_mgr, per_mgr_service)
+add_service(per_mgr, vendor_per_mgr_service)
 
 set_prop(per_mgr, vendor_peripheral_prop)
 
 allow per_mgr self:capability net_bind_service;
 
 qrtr_socket_create(per_mgr)
-allow per_mgr ssr_device:chr_file { open read };
+allow per_mgr vendor_ssr_device:chr_file { open read };
 allow per_mgr device:dir search;
 
-r_dir_file(per_mgr, sysfs_msm_subsys)
-r_dir_file(per_mgr, sysfs_esoc)
+r_dir_file(per_mgr, vendor_sysfs_msm_subsys)
+r_dir_file(per_mgr, vendor_sysfs_esoc)
 
 dontaudit per_mgr kernel:system module_request;
 
-allow per_mgr ssr_device:chr_file write;
+allow per_mgr vendor_ssr_device:chr_file write;
 allow per_mgr sysfs:file { open read };

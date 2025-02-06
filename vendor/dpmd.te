@@ -1,5 +1,4 @@
 type dpmd, domain;
-
 type dpmd_exec, exec_type, vendor_file_type, file_type;
 
 # Allow radio to establish socket comms to dpmd
@@ -12,7 +11,7 @@ hwbinder_use(dpmd)
 get_prop(dpmd, hwservicemanager_prop)
 
 # Allow to find and use com.qualcomm.qti.dpmd.api::IdpmQmi
-allow dpmd vnd_qti_dpm_hwservice:hwservice_manager find;
+allow dpmd vendor_qti_dpm_hwservice:hwservice_manager find;
 
 # Allow to talk to IdpmQmi over binder
 binder_call(dpmd, dpmqmimgr)
@@ -26,6 +25,6 @@ allow netutils_wrapper dpmd:fd use;
 # allow netutils_wrapper dpmd:file r_file_perms;
 allow netutils_wrapper dpmd:unix_stream_socket { read write };
 
-rw_diag_device(dpmd)
+rw_vendor_diag_device(dpmd)
 
 allow dpmd proc_net:file rw_file_perms;

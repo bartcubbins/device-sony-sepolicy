@@ -34,13 +34,13 @@ allow $1 self:qipcrtr_socket create_socket_perms_no_ioctl;
 ')
 
 #####################################
-# rw_diag_device(domain)
-# Allow the specified domain rw_file_perms to diag_device
+# rw_vendor_diag_device(domain)
+# Allow the specified domain rw_file_perms to vendor_diag_device
 # in userdebug or eng builds, donotaudit otherwise.
-define(`rw_diag_device', `
+define(`rw_vendor_diag_device', `
 userdebug_or_eng(`
-  allow $1 diag_device:chr_file rw_file_perms;
+  allow $1 vendor_diag_device:chr_file rw_file_perms;
 ')
 # Ignore in user builds
-dontaudit $1 diag_device:chr_file rw_file_perms;
+dontaudit $1 vendor_diag_device:chr_file rw_file_perms;
 ')

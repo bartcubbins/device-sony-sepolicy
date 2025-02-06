@@ -5,5 +5,5 @@ init_daemon_domain(atfwd_daemon)
 
 allow atfwd_daemon self:qipcrtr_socket create_socket_perms_no_ioctl;
 
-r_dir_file(atfwd_daemon, sysfs_esoc)
-r_dir_file(atfwd_daemon, sysfs_msm_subsys)
+r_dir_file(atfwd_daemon, vendor_sysfs_esoc)
+r_dir_file(atfwd_daemon, vendor_sysfs_msm_subsys)

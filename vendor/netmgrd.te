@@ -26,8 +26,8 @@ allow netmgrd self:capability {
 set_prop(netmgrd, vendor_net_prop)
 get_prop(netmgrd, hwservicemanager_prop)
 
-allow netmgrd netmgrd_socket:dir w_dir_perms;
-allow netmgrd netmgrd_socket:sock_file create_file_perms;
+allow netmgrd vendor_netmgrd_socket:dir w_dir_perms;
+allow netmgrd vendor_netmgrd_socket:sock_file create_file_perms;
 allow netmgrd self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write };
 allow netmgrd self:netlink_generic_socket create_socket_perms_no_ioctl;
 allow netmgrd self:netlink_route_socket nlmsg_write;
@@ -37,26 +37,26 @@ qrtr_socket_create(netmgrd)
 
 allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
 
-allow netmgrd qmuxd_socket:dir w_dir_perms;
-allow netmgrd qmuxd_socket:sock_file create_file_perms;
-unix_socket_connect(netmgrd, qmuxd, qmuxd)
+allow netmgrd vendor_qmuxd_socket:dir w_dir_perms;
+allow netmgrd vendor_qmuxd_socket:sock_file create_file_perms;
+unix_socket_connect(netmgrd, vendor_qmuxd, qmuxd)
 
-rw_diag_device(netmgrd)
+rw_vendor_diag_device(netmgrd)
 
 allow netmgrd sysfs_net:dir r_dir_perms;
 allow netmgrd sysfs_net:file rw_file_perms;
 
-r_dir_file(netmgrd, sysfs_msm_subsys)
-r_dir_file(netmgrd, sysfs_soc)
-r_dir_file(netmgrd, sysfs_esoc)
+r_dir_file(netmgrd, vendor_sysfs_msm_subsys)
+r_dir_file(netmgrd, vendor_sysfs_soc)
+r_dir_file(netmgrd, vendor_sysfs_esoc)
 
 allow netmgrd vendor_data_qmipriod_prop:property_service set;
 allow netmgrd vendor_data_shsusr_prop:property_service set;
 
 allow netmgrd proc_net:file rw_file_perms;
 
-allow netmgrd netmgr_vendor_data_file:dir rw_dir_perms;
-allow netmgrd netmgr_vendor_data_file:file create_file_perms;
+allow netmgrd vendor_netmgr_data_file:dir rw_dir_perms;
+allow netmgrd vendor_netmgr_data_file:file create_file_perms;
 
 allow netmgrd vendor_toolbox_exec:file rx_file_perms;
 
