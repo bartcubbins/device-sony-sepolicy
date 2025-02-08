@@ -8,6 +8,9 @@ set_prop(tee, vendor_keymaster_prop)
 # Access to wakelock
 wakelock_use(tee)
 
+# Allow to find and use vendor.qti.hardware.qseecom::IQSEECom
+allow tee vendor_qti_qseecom_hwservice:hwservice_manager find;
+
 allow tee vendor_firmware_file:dir search;
 allow tee vendor_firmware_file:file r_file_perms;
 allow tee block_device:dir { getattr search };
