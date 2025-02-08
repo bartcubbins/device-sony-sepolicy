@@ -13,5 +13,6 @@ type vendor_qti_ims_factory_hwservice,     hwservice_manager_type;
 type vendor_qti_imscms_hwservice,          hwservice_manager_type;
 type vendor_qti_uce_hwservice,             hwservice_manager_type;
 type vendor_qti_qseecom_hwservice,         hwservice_manager_type;
+type vendor_qti_qspmhal_hwservice,         hwservice_manager_type;
 type vendor_somc_miscta_hwservice,         hwservice_manager_type;
 type vendor_somc_modemswitcher_hwservice,  hwservice_manager_type;

@@ -1,5 +1,6 @@
 dontaudit surfaceflinger vendor_firmware_file:dir search;
 dontaudit surfaceflinger kernel:system module_request;
+dontaudit surfaceflinger vendor_qti_qspmhal_hwservice:hwservice_manager find;
 
 allow surfaceflinger vendor_debugfs_ion:dir search;
 

@@ -34,3 +34,5 @@ vendor.qti.hardware.camera.aon::IAONService                             u:object
 vendor.qti.hardware.camera.postproc::IPostProcService                   u:object_r:hal_camera_hwservice:s0
 # QSEECOM:
 vendor.qti.hardware.qseecom::IQSEECom                                   u:object_r:vendor_qti_qseecom_hwservice:s0
+# QSPM HAL:
+vendor.qti.qspmhal::IQspmhal                                            u:object_r:vendor_qti_qspmhal_hwservice:s0

@@ -1,2 +1,4 @@
 # allow bootanim to read kgsl gpu model
 allow bootanim vendor_sysfs_kgsl_gpu_model:file r_file_perms;
+
+dontaudit bootanim vendor_qti_qspmhal_hwservice:hwservice_manager find;
