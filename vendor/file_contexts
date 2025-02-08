@@ -231,7 +231,6 @@
 /(vendor|odm)/lib(64)?/libqdMetaData(\.legacy)?\.so     u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libqservice\.so                  u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libqdutils\.so                   u:object_r:same_process_hal_file:s0
-/(vendor|odm)/lib(64)?/libadreno_app_profiles\.so       u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libadreno_utils\.so              u:object_r:same_process_hal_file:s0
 /(vendor|odm)/lib(64)?/libgsl\.so                       u:object_r:same_process_hal_file:s0
 
