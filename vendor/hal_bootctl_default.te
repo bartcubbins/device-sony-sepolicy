@@ -20,3 +20,6 @@ allow hal_bootctl_default vendor_vbmeta_block_device:blk_file getattr;
 
 # Write to the XBL devices.
 allow hal_bootctl_default vendor_xbl_block_device:blk_file rw_file_perms;
+
+# Read access dir permission for dt_firmware
+allow hal_bootctl_default sysfs_dt_firmware_android:dir r_dir_perms;
