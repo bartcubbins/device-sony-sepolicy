@@ -1,8 +1,6 @@
-# Add vendor.nxp.nxpnfc::INxpNfc
-add_hwservice(hal_nfc_default, vendor_nxpnfc_hwservice)
-
 # Data file accesses.
 allow hal_nfc_default vendor_nfc_data_file:dir create_dir_perms;
 allow hal_nfc_default vendor_nfc_data_file:file create_file_perms;
-dontaudit hal_nfc_default vendor_nxpese_hwservice:hwservice_manager find;
-dontaudit hal_nfc_default vendor_nxpnfc_hwservice:hwservice_manager add;
+
+# For AIDL Service
+hal_attribute_service(hal_nfc, vendor_hal_nxpnfc_service)

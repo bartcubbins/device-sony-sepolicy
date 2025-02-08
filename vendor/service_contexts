@@ -1,2 +1,4 @@
 # QTI camera:
 android.hardware.camera.provider.ICameraProvider/vendor_qti/0           u:object_r:hal_camera_service:s0
+# NXP NFC
+vendor.nxp.nxpnfc_aidl.INxpNfc/default                                  u:object_r:vendor_hal_nxpnfc_service:s0

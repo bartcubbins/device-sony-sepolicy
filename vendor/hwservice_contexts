@@ -1,6 +1,4 @@
 vendor.display.config::IDisplayConfig                                   u:object_r:vendor_hal_display_config_hwservice:s0
-vendor.nxp.nxpnfc::INxpNfc                                              u:object_r:vendor_nxpnfc_hwservice:s0
-vendor.nxp.nxpese::INxpEse                                              u:object_r:vendor_nxpese_hwservice:s0
 # QTI IMS:
 com.qualcomm.qti.imscmservice::IImsCmService                            u:object_r:vendor_qti_imscms_hwservice:s0
 com.qualcomm.qti.uceservice::IUceService                                u:object_r:vendor_qti_uce_hwservice:s0

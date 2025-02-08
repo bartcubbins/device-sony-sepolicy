@@ -1,7 +1,5 @@
 type vendor_hal_display_config_hwservice,  hwservice_manager_type;
 type vendor_hal_imsrtp_hwservice,          hwservice_manager_type;
-type vendor_nxpese_hwservice,              hwservice_manager_type;
-type vendor_nxpnfc_hwservice,              hwservice_manager_type;
 type vendor_data_connection_hwservice,     hwservice_manager_type;
 type vendor_data_factory_hwservice,        hwservice_manager_type;
 type vendor_data_iwlan_hwservice,          hwservice_manager_type;
