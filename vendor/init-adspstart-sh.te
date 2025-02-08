@@ -8,8 +8,8 @@ allow vendor_init-qcom-adspstart-sh { vendor_file vendor_shell_exec vendor_toolb
 # Set the vendor.qcom.adspup property
 set_prop(vendor_init-qcom-adspstart-sh, vendor_device_prop)
 
-# Set boot_adsp, boot_cdsp and boot_slpi to 1
-allow vendor_init-qcom-adspstart-sh vendor_sysfs_msm_subsys:file w_file_perms;
+# Set boot_adsp to 1
+allow vendor_init-qcom-adspstart-sh vendor_sysfs_boot_adsp:file w_file_perms;
 
-# Ignore O_CREAT flag in bash file redirection:
-dontaudit vendor_init-qcom-adspstart-sh vendor_sysfs_msm_subsys:file create;
+# Access to remoteproc name/status
+r_dir_file(vendor_init-qcom-adspstart-sh, vendor_sysfs_ssr)
